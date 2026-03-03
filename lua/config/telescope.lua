@@ -1,18 +1,22 @@
 local telescope = require("telescope")
+local actions = require("telescope.actions")
+
 telescope.setup({
   defaults = {
-    cwd = vim.fn.expand("~"),
-    layout_strategy = "horizontal",
-    layout_config = { prompt_position = "top" },
-    sorting_strategy = "ascending",
-    prompt_prefix = "  ",
+    path_display = { "truncate" },
     mappings = {
       i = {
-        ["<C-h>"] = "which_key",
+        ["<C-k>"] = actions.move_selection_previous, -- Move up in results
+        ["<C-j>"] = actions.move_selection_next,     -- Move down in results
+        ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
       },
     },
   },
-  pickers = {
-    find_files = { hidden = true },
-  },
 })
+
+-- Keymaps (Add these to your config/keymaps.lua or keep here)
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Find Files (Ctrl+P)' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Grep Search (Find in Files)' })
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Find Open Buffers' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Find Help Docs' })
