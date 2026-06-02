@@ -1,17 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-<<<<<<< Updated upstream
-vim.opt.runtimepath:prepend("~/.local/share/nvim/lazy/lazy.nvim")
-require("lazy").setup("plugins")
-
-require("config.mason")
-require("config.lsp")
-require("config.cmp")
-require("config.explorer")
-require("config.telescope")
-require("config.devcontainer")
-=======
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -33,5 +22,4 @@ require("lazy").setup("plugins", {
 })
 
 -- Load keymaps AFTER plugins so all commands (:Telescope, etc.) exist
->>>>>>> Stashed changes
 require("config.keymaps")

@@ -1,14 +1,3 @@
-<<<<<<< Updated upstream
-require("nvim-tree").setup({
-  sort = { sorter = "case_sensitive" },
-  view = { width = 35 },
-  renderer = { group_empty = true },
-  filters = { dotfiles = false },
-})
-
--- Keymap to toggle file explorer
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
-=======
 local ok, nvimtree = pcall(require, "nvim-tree")
 if not ok then return end
 
@@ -43,4 +32,3 @@ nvimtree.setup({
     open_file = { resize_window = true, window_picker = { enable = true } },
   },
 })
->>>>>>> Stashed changes

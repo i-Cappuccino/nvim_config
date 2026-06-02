@@ -3,11 +3,6 @@ local opts = { noremap = true, silent = true }
 
 vim.g.mapleader = " "
 
-<<<<<<< Updated upstream
--- Telescope
-keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
-keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
-=======
 ---------------------------------------------------------------------------
 -- GENERAL
 ---------------------------------------------------------------------------
@@ -60,7 +55,6 @@ keymap("v", "<M-j>", ":m '>+1<CR>gv=gv",  opts)
 keymap("v", "<M-k>", ":m '<-2<CR>gv=gv",  opts)
 
 keymap("n", "<M-S-j>", "yyp",  opts)
->>>>>>> Stashed changes
 
 ---------------------------------------------------------------------------
 -- INDENT / DELETE / PASTE
@@ -72,15 +66,6 @@ keymap("n", "<leader>dh", '"_d',  { desc = "Delete (no yank)" })
 keymap("v", "<leader>dh", '"_d',  { desc = "Delete (no yank)" })
 keymap("v", "p",  '"_dP', opts)   -- Paste over selection without overwriting register
 
-<<<<<<< Updated upstream
--- LSP
-keymap("n", "gd", vim.lsp.buf.definition, opts)
-keymap("n", "K", vim.lsp.buf.hover, opts)
-keymap("n", "<leader>rn", vim.lsp.buf.rename, opts)
-keymap("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-keymap("n", "gr", vim.lsp.buf.references, opts)
-keymap("n", "<leader>f", function() vim.lsp.buf.format { async = true } end, opts)
-=======
 ---------------------------------------------------------------------------
 -- CLIPBOARD
 ---------------------------------------------------------------------------
@@ -208,4 +193,3 @@ keymap("i", "<C-BS>",   "<C-w>",    opts)
 keymap({ "n", "v" }, "<M-Right>", "w",  opts)
 keymap({ "n", "v" }, "<M-Left>",  "b",  opts)
 keymap({ "n", "v" }, "<C-e>",     "$",  opts)
->>>>>>> Stashed changes

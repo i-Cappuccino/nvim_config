@@ -1,8 +1,3 @@
-<<<<<<< Updated upstream
-vim.lsp.enable('lua_ls')
-vim.lsp.enable('pyright')
-vim.lsp.enable('clangd')
-=======
 -- lsp.lua — uses the native vim.lsp.config / vim.lsp.enable API (Neovim 0.11+)
 
 ---------------------------------------------------------------------------
@@ -172,4 +167,3 @@ for name, config in pairs(servers) do
   vim.lsp.config(name, config)
   vim.lsp.enable(name)
 end
->>>>>>> Stashed changes

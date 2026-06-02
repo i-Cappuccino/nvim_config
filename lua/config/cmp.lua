@@ -1,13 +1,6 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
 
-<<<<<<< Updated upstream
-cmp.setup({
-  snippet = { expand = function(args) luasnip.lsp_expand(args.body) end },
-  mapping = cmp.mapping.preset.insert({
-    ["<C-Space>"] = cmp.mapping.complete(),
-    ["<CR>"] = cmp.mapping.confirm({ select = true }),
-=======
 require("luasnip.loaders.from_vscode").lazy_load()
 
 cmp.setup({
@@ -27,7 +20,6 @@ cmp.setup({
     ["<C-e>"]     = cmp.mapping.abort(),
     ["<CR>"]      = cmp.mapping.confirm({ select = true }),
 
->>>>>>> Stashed changes
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -37,6 +29,7 @@ cmp.setup({
         fallback()
       end
     end, { "i", "s" }),
+
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
@@ -49,20 +42,12 @@ cmp.setup({
   }),
 
   sources = cmp.config.sources({
-<<<<<<< Updated upstream
-    { name = "nvim_lsp" },
-    { name = "luasnip" },
-=======
     { name = "nvim_lsp", priority = 1000 },
     { name = "luasnip",  priority = 750 },
     { name = "path",     priority = 500 },
->>>>>>> Stashed changes
   }, {
-    { name = "buffer" },
-    { name = "path" },
+    { name = "buffer",   priority = 250 },
   }),
-<<<<<<< Updated upstream
-=======
 
   formatting = {
     format = function(entry, vim_item)
@@ -89,5 +74,4 @@ cmp.setup({
   experimental = {
     ghost_text = false,  -- Disabled — Copilot's inline suggestions cover this
   },
->>>>>>> Stashed changes
 })

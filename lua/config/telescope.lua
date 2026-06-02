@@ -1,16 +1,4 @@
 local telescope = require("telescope")
-<<<<<<< Updated upstream
-telescope.setup({
-  defaults = {
-    cwd = vim.fn.expand("~"),
-    layout_strategy = "horizontal",
-    layout_config = { prompt_position = "top" },
-    sorting_strategy = "ascending",
-    prompt_prefix = "  ",
-    mappings = {
-      i = {
-        ["<C-h>"] = "which_key",
-=======
 local actions   = require("telescope.actions")
 
 telescope.setup({
@@ -37,7 +25,6 @@ telescope.setup({
       n = {
         ["q"] = actions.close,
         ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
->>>>>>> Stashed changes
       },
     },
     file_ignore_patterns = { "%.git/", "node_modules/", "%.DS_Store", "build/", "__pycache__/" },
@@ -53,12 +40,6 @@ telescope.setup({
     buffers        = { sort_mru = true, previewer = false },
     lsp_references = { fname_width = 60 },
   },
-  pickers = {
-    find_files = { hidden = true },
-  },
 })
-<<<<<<< Updated upstream
-=======
 
 pcall(telescope.load_extension, "fzf")
->>>>>>> Stashed changes

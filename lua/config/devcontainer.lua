@@ -1,16 +1,5 @@
 require("devcontainer").setup({
-  -- optional customization
   generate_commands = true,
-<<<<<<< Updated upstream
-  autocommands = {
-    init = false,
-    clean = false,
-  },
-  attach_mounts = {
-    container_runtime = "docker",  -- or nil to autodetect
-  },
-})
-=======
   autocommands = { init = true, clean = true },
   attach_mounts = {
     neovim_config = { enabled = true, type = "bind" },
@@ -23,4 +12,3 @@ require("devcontainer").setup({
     end,
   },
 })
->>>>>>> Stashed changes
